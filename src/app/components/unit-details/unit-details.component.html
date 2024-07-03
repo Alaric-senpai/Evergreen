@@ -1,0 +1,43 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title-group>
+            <mat-card-title>
+                {{ unitcode}}
+            </mat-card-title>
+        </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="unit_details">
+            <div class="image">
+                <img src="https://preview.redd.it/2fjeun3pge4d1.jpeg?width=640&crop=smart&auto=webp&s=ac104b31df1a41cf53aa3ed1cfba23a4ad7f1198" alt="" mat-card-lg-image>
+            </div>
+            <div class="details">
+                <h5>Lecturer: Dr.Kituku</h5>
+                <h6>Lab sessions: Yes</h6>
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae explicabo, saepe odio eveniet hic ducimus quae delectus illum dolorem vitae aliquam, ea repellat officiis magni pariatur blanditiis sint nihil vel earum. Quasi natus eaque labore nulla, fuga blanditiis pariatur beatae?
+                </p>
+                <h5>ExAM & CATS</h5>
+                <h6>CATS</h6>
+                <p>Cat 1: 12/2/2023 <span class="status">Done</span></p>
+                <p>Cat 2: 12/2/2023 <span class="status">cancelled</span></p>
+                <p>Cat 3: 12/2/2023 <span class="status">Pending</span></p>
+
+                <h6>EXAM</h6>
+                <p>Date: 12/2/2222</p>
+                <p>Status: pending</p>
+
+
+        <mat-card-actions>
+
+                    <button mat-flat-button>Bookmark</button>
+
+                    <button mat-flat-button>Add to fovourites</button>
+                    <button mat-button (click)="goback()">Go Back</button>
+
+
+        </mat-card-actions>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

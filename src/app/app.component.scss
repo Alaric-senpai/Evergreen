@@ -1,0 +1,28 @@
+@use '@angular/material' as mat;
+
+$light-theme: mat.define-theme();
+$dark-theme: mat.define-theme((
+  color: (
+    theme-type: dark
+  )
+));
+
+.spacer {
+    flex: 1 1 auto;
+  }
+.w-90{
+    // margin-top: 20px;
+    width: 90%;
+    margin: 20px auto;
+}
+.sticky-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Adjust z-index as needed */
+}
+mat-toolbar {
+    // Override the colors to create a dark sidenav.
+    @include mat.all-component-colors($dark-theme);
+  }
+  

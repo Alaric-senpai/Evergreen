@@ -1,0 +1,20 @@
+.unit{
+    width: 100%;
+    margin-block: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .details{
+        display: flex;
+        gap: 10px;
+    }
+
+    mat-card-actions{
+        float: right;
+        justify-content: end;
+    }
+}
+mat-card{
+    margin-bottom: 25px;
+}
