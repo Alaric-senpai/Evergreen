@@ -1,0 +1,30 @@
+mat-card{
+    margin-bottom: 20px;
+}
+.banner{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    max-height: 150px;
+    margin-bottom: 10px;
+}
+.content{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+
+    .details{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 60px;
+    }
+    .image{
+        img{
+            width: 100px;
+            height: 100px;
+            aspect-ratio: 1;
+        }
+    }
+}

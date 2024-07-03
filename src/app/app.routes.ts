@@ -11,11 +11,19 @@ import { PageMissingComponent } from './components/page-missing/page-missing.com
 import { LibraryComponent } from './components/library/library.component';
 import { LibrarySearchComponent } from './components/library-search/library-search.component';
 import { MessagesComponent } from './components/messages/messages.component';
+import { StudentsComponent } from './components/students/students.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { TeachersComponent } from './components/teachers/teachers.component';
+import { NavigateComponent } from './components/navigate/navigate.component';
 
 export const routes: Routes = [
     {
-        path:'',
-        // component: AppComponent,
+        path: '',
+        component: NavigateComponent
+    },
+    {
+        path:'student',
+        component: StudentsComponent,
         children: [
             {
                 path: '',
@@ -68,6 +76,16 @@ export const routes: Routes = [
             }
 
         ]
+    },
+    {
+        path: 'admin',
+        component: AdminComponent,
+        title: 'admin'
+    },
+    {
+        path: 'teacher',
+        component: TeachersComponent,
+        title: 'teachers'
     },
     {
         path: '**',
