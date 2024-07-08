@@ -1,0 +1,16 @@
+mat-card{
+    margin-top: 20px;
+}
+
+.unit{
+    margin-block: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    .details{
+        display: flex;
+        align-items: center;
+    }
+}

@@ -1,0 +1,44 @@
+mat-card{
+    margin-top: 20px;
+    
+}
+.container{
+    background-color: #25252b;
+    padding: 10px;
+    width: 98%;
+
+}
+.banner{
+    // width: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    max-height: 150px;
+    margin-bottom: 10px;
+}
+.content{
+    display: flex;
+    align-items: center;
+    // gap: 20px;
+    justify-content: space-between;
+
+    .details{
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 60px;
+
+        button{
+            color: white;
+        }
+    }
+
+    .image{
+        img{
+            width: 100px;
+            height: 100px;
+            aspect-ratio: 1;
+        }
+    }
+}

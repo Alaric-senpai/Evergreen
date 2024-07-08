@@ -1,1 +1,52 @@
-<p>teachers works!</p>
+<div class="dashboard">
+    <mat-card  class="menu">
+        <mat-card-header>
+            <h5>Evergreen</h5>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+            <ul>
+                <li><a routerLink="dashboard" routerLinkActive="link-active"><mat-icon>home</mat-icon>  Dashboard</a></li>
+                <li><a routerLink="lcourses" routerLinkActive="link-active"><mat-icon>school</mat-icon>  Courses</a></li>
+                <li><a routerLink="timetable" routerLinkActive="link-active"><mat-icon>event_note</mat-icon>  Timetable</a></li>
+                <li><a routerLink="lprofile" routerLinkActive="link-active"><mat-icon>account_circle</mat-icon>  Profile</a></li>
+            </ul>
+            <div class="bottom">
+                <div class="image">
+                    <img src="https://tricksmaze.org/wp-content/uploads/2017/04/Stylish-Girls-Profile-Pictures-10.jpg" alt="" matCardAvatar>
+                </div>
+                <div class="details">
+                    <div class="info">
+                        <mat-card-title-group>
+                            <mat-card-title>
+                                alaric Senpai
+                            </mat-card-title>
+                            <mat-card-subtitle>
+                                senpai.gmail.com
+                            </mat-card-subtitle>
+                        </mat-card-title-group>
+                    </div>
+                    <div class="act">
+                        <a mat-icon-button>
+                            <mat-icon>logout</mat-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    <div class="content">
+        <mat-card class="greet">
+            <mat-card-content>
+                <h6>Good morning Alric,</h6>
+
+                <span>
+                    {{today}}
+                </span>
+            </mat-card-content>
+        </mat-card>
+        <div>
+            <router-outlet></router-outlet> 
+        </div>
+    </div>
+</div>

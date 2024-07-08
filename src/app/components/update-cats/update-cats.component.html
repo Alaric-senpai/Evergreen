@@ -1,0 +1,62 @@
+<form>
+    <mat-stepper [linear]="isLinear">
+      <mat-step>
+        <ng-template matStepLabel>CAT1 date</ng-template>
+        <mat-form-field>
+          <mat-label>CAT 1</mat-label>
+          <input matInput [matDatepicker]="picker1">
+          <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+          <mat-hint>MM/DD/YYYY</mat-hint>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext type="button">Next</button>
+          <button type="button" mat-button (click)="close()">Close</button>
+        </div>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>CAT2 date</ng-template>
+        <mat-form-field>
+          <mat-label>CAT 2</mat-label>
+          <input matInput [matDatepicker]="picker2">
+          <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+          <mat-hint>MM/DD/YYYY</mat-hint>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext type="button">Next</button>
+          <button type="button" mat-button (click)="close()">Close</button>
+        </div>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>CAT3 date</ng-template>
+        <mat-form-field>
+          <mat-label>CAT 3</mat-label>
+          <input matInput [matDatepicker]="picker3">
+          <mat-datepicker-toggle matIconSuffix [for]="picker3"></mat-datepicker-toggle>
+          <mat-datepicker #picker3></mat-datepicker>
+          <mat-hint>MM/DD/YYYY</mat-hint>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext type="button">Next</button>
+          <button type="button" mat-button (click)="close()">Close</button>
+        </div>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Exam date</ng-template>
+        <mat-form-field>
+          <mat-label>Exam</mat-label>
+          <input matInput [matDatepicker]="picker4">
+          <mat-datepicker-toggle matIconSuffix [for]="picker4"></mat-datepicker-toggle>
+          <mat-datepicker #picker4></mat-datepicker>
+          <mat-hint>MM/DD/YYYY</mat-hint>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious type="button">Prev</button>
+          <button type="submit" mat-button>Submit</button>
+          <button type="button" mat-button (click)="close()">Close</button>
+        </div>
+      </mat-step>
+    </mat-stepper>
+  </form>
+  

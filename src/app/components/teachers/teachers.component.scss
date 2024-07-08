@@ -1,0 +1,101 @@
+html{
+    width: 100dvw;
+    height: 100dvh;
+    overflow: hidden;
+}
+.dashboard{
+    display: grid;
+    grid-template-columns: 25% 75%;
+    gap: 20px;
+    padding: 10px;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+.content{
+    width: 97%;
+    height: 96dvh;
+    overflow-x: hidden;
+    overflow-y: scroll !important;
+
+    .greet{
+
+        mat-card-content{
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+    }
+}
+
+.menu{
+    height: 90dvh;
+    margin: auto 0;
+    // margin-block: 5vh;
+    mat-card-content{
+        height: 100%;
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        flex-direction: column;
+
+        ul{
+            list-style: none;
+            width: 100%;
+            // left: -40px;
+            margin-left: -40px;
+
+
+            li{
+
+                a{
+                    box-sizing: border-box;
+                    text-decoration: none;
+                    height: 50px;
+                    margin-bottom: 10px;
+                    transition: all .5s ease;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: start;
+                    // background-color: black;
+                    border-radius: 10px;
+                    padding-left: 15px;
+                }
+            }
+        }
+
+
+        .bottom{
+            display: flex;
+            gap: 20px;
+            align-items: center;
+
+            .image{
+                display: grid;
+                padding-top: 15px;
+                place-items: center;
+                // background-color: red;
+                img{
+                    object-position: center;
+
+                }
+            }
+
+            .details{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+            }
+        }
+    }
+}
+
+.link-active{
+    background-color: black;
+    color: white;
+}

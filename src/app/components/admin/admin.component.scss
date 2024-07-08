@@ -1,0 +1,36 @@
+@use '@angular/material' as mat;
+
+$light-theme: mat.define-theme();
+$dark-theme: mat.define-theme((
+  color: (
+    theme-type: dark
+  )
+));
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+
+html{
+    min-width: 100dvw;
+    min-height: 100dvh;
+    max-width: 100dvw;
+    max-height: 100dvh;
+    overflow: hidden;
+
+    @include mat.all-component-colors($dark-theme);
+    
+
+
+}
+
+.w-90{
+    width: 95%;
+    margin: 0 auto;
+    padding-top: 20px;
+}

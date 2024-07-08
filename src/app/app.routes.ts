@@ -15,6 +15,13 @@ import { StudentsComponent } from './components/students/students.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { TeachersComponent } from './components/teachers/teachers.component';
 import { NavigateComponent } from './components/navigate/navigate.component';
+import { LecDashboardComponent } from './components/lec-dashboard/lec-dashboard.component';
+import { LecTimetableComponent } from './components/lec-timetable/lec-timetable.component';
+import { LecCoursesComponent } from './components/lec-courses/lec-courses.component';
+import { LecProfileComponent } from './components/lec-profile/lec-profile.component';
+import { RemindersComponent } from './components/reminders/reminders.component';
+import { LecEventsComponent } from './components/lec-events/lec-events.component';
+import { LecUnitDetailsComponent } from './components/lec-unit-details/lec-unit-details.component';
 
 export const routes: Routes = [
     {
@@ -41,6 +48,11 @@ export const routes: Routes = [
                 title: 'Units enrolled'
             },
             {
+                path: 'details/:id',
+                component: UnitDetailsComponent,
+                title: 'Unit details',
+            },
+            {
                 path: 'results',
                 component: ResultsComponent,
                 title: 'Results'
@@ -54,11 +66,7 @@ export const routes: Routes = [
                 path: 'statements',
                 component: FeeStatementsComponent
             },
-            {
-                path: 'details/:id',
-                component: UnitDetailsComponent,
-                title: 'Unit details',
-            },
+            
             {
                 path: 'library',
                 component: LibraryComponent,
@@ -85,7 +93,49 @@ export const routes: Routes = [
     {
         path: 'teacher',
         component: TeachersComponent,
-        title: 'teachers'
+        title: 'Lecturer',
+        children: [
+            {
+                path: 'dashboard',
+                component: LecDashboardComponent,
+                title: 'dashboard'
+            },
+            {
+                path: 'timetable',
+                component: LecTimetableComponent,
+                title: 'Schedule'
+            },
+            {
+                path: 'lcourses',
+                component: LecCoursesComponent,
+                title: 'Units'
+            },
+            {
+                path: 'lprofile',
+                component: LecProfileComponent,
+                title: 'Profile'
+            },
+            {
+                path: 'reminders',
+                component: RemindersComponent,
+                title: 'Reminders'
+            },
+            {
+                path: 'events',
+                component: LecEventsComponent,
+                title: 'Events'
+            },
+            {
+                path: 'unit_details/:id',
+                component: LecUnitDetailsComponent,
+                title: 'Unit details'
+            },
+            {
+                path: '',
+                redirectTo: 'dashboard',
+                pathMatch: 'full'
+            }
+        ]
     },
     {
         path: '**',

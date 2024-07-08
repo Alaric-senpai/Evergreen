@@ -1,0 +1,25 @@
+<form>
+    <mat-stepper [linear]="isLinear">
+      <mat-step>
+        <ng-template matStepLabel>Provide new description</ng-template>
+        <mat-form-field>
+          <mat-label>Description</mat-label>
+          <textarea matInput placeholder="Enter description" required></textarea>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext type="button">Next</button>
+          <button type="button" mat-button (click)="close()">Close</button>
+        </div>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Submit</ng-template>
+        <h6>Set new description</h6>
+        <div>
+          <button type="button" matStepperPrevious mat-button>Prev</button>
+          <button type="submit" mat-button>Submit</button>
+          <button type="button" mat-button (click)="close()">Close</button>
+        </div>
+      </mat-step>
+    </mat-stepper>
+  </form>
+  

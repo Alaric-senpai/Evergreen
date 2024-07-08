@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -9,4 +10,10 @@ import { Component } from '@angular/core';
 })
 export class PageMissingComponent {
 
+  constructor(private location:Location){}
+
+  goback(){
+    this.location.back();
+  }
 }
+
