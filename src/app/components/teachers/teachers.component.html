@@ -1,52 +1,49 @@
 <div class="dashboard">
-    <mat-card  class="menu">
-        <mat-card-header>
-            <h5>Evergreen</h5>
-        </mat-card-header>
-        <mat-divider></mat-divider>
-        <mat-card-content>
-            <ul>
-                <li><a routerLink="dashboard" routerLinkActive="link-active"><mat-icon>home</mat-icon>  Dashboard</a></li>
-                <li><a routerLink="lcourses" routerLinkActive="link-active"><mat-icon>school</mat-icon>  Courses</a></li>
-                <li><a routerLink="timetable" routerLinkActive="link-active"><mat-icon>event_note</mat-icon>  Timetable</a></li>
-                <li><a routerLink="lprofile" routerLinkActive="link-active"><mat-icon>account_circle</mat-icon>  Profile</a></li>
-            </ul>
-            <div class="bottom">
-                <div class="image">
-                    <img src="https://tricksmaze.org/wp-content/uploads/2017/04/Stylish-Girls-Profile-Pictures-10.jpg" alt="" matCardAvatar>
-                </div>
-                <div class="details">
-                    <div class="info">
-                        <mat-card-title-group>
-                            <mat-card-title>
-                                alaric Senpai
-                            </mat-card-title>
-                            <mat-card-subtitle>
-                                senpai.gmail.com
-                            </mat-card-subtitle>
-                        </mat-card-title-group>
-                    </div>
-                    <div class="act">
-                        <a mat-icon-button>
-                            <mat-icon>logout</mat-icon>
-                        </a>
-                    </div>
-                </div>
+    <mat-card class="menu" id="mainmenu" #mainmenu>
+      <mat-card-header class="logo">
+        <h5>Evergreen</h5>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <ul>
+          <li><a routerLink="dashboard" routerLinkActive="link-active"><mat-icon>home</mat-icon><span> Dashboard</span></a></li>
+          <li><a routerLink="lcourses" routerLinkActive="link-active"><mat-icon>school</mat-icon><span>  Courses</span></a></li>
+          <li><a routerLink="timetable" routerLinkActive="link-active"><mat-icon>event_note</mat-icon><span>  Timetable</span></a></li>
+          <li><a routerLink="lprofile" routerLinkActive="link-active"><mat-icon>account_circle</mat-icon><span>  Profile</span></a></li>
+        </ul>
+        <div class="bottom">
+          <div class="image">
+            <img src="https://tricksmaze.org/wp-content/uploads/2017/04/Stylish-Girls-Profile-Pictures-10.jpg" alt="" matCardAvatar>
+          </div>
+          <div class="details">
+            <div class="info">
+              <mat-card-title-group>
+                <mat-card-title>alaric Senpai</mat-card-title>
+                <mat-card-subtitle>senpai.gmail.com</mat-card-subtitle>
+              </mat-card-title-group>
             </div>
-        </mat-card-content>
+            <div class="act">
+              <a mat-icon-button>
+                <mat-icon>logout</mat-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
     </mat-card>
     <div class="content">
-        <mat-card class="greet">
-            <mat-card-content>
-                <h6>Good morning Alric,</h6>
-
-                <span>
-                    {{today}}
-                </span>
-            </mat-card-content>
-        </mat-card>
-        <div>
-            <router-outlet></router-outlet> 
-        </div>
+      <mat-card class="greet">
+        <mat-card-content>
+          <h6>Good morning User</h6>
+          <span id="time">{{ today | date: 'shortDate' }}</span>
+          <button id="menu" (click)="showmenu()" mat-mini-fab>
+            <mat-icon>menu</mat-icon>
+          </button>
+        </mat-card-content>
+      </mat-card>
+      <div>
+        <router-outlet></router-outlet> 
+      </div>
     </div>
-</div>
+  </div>
+  

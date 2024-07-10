@@ -1,3 +1,7 @@
+html{
+    width: 100dvw ;
+    overflow-x: hidden !important;
+}
 .unit_details{
     display: flex;
     gap: 20px;
@@ -5,5 +9,17 @@
 mat-card-actions{
     button{
         margin-inline: 10px;
+    }
+}
+@media only screen and  (max-width: 768px){
+    .unit_details{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        img{
+            width: 100%;
+            border-radius: 20px;
+        }
     }
 }

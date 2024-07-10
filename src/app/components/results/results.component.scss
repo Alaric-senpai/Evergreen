@@ -9,3 +9,20 @@
     border-radius: 10px;
     background-color: darkgreen;
 }
+@media screen  and (max-width:768px){
+    mat-panel-title{
+        font-size: 80%;
+        width: 100%;
+
+    }
+    mat-panel-description{
+        font-size: 60%;
+    }
+    .breakdown{
+        font-size: 80%;
+    }
+    mat-expansion-panel{
+        margin: 20px;
+        min-height: 50px;
+    }
+}

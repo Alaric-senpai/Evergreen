@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
+import { GobackService } from '../../services/goback.service';
 
 @Component({
   selector: 'app-admin',
@@ -11,5 +12,9 @@ import { RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angul
   styleUrl: './admin.component.scss'
 })
 export class AdminComponent {
+  constructor(private location:GobackService){}
 
+  goback(){
+    this.location.goback();
+  }
 }

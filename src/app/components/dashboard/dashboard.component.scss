@@ -71,3 +71,31 @@ mat-card-content{
         }
     }
 }
+
+@media only screen and (max-width:1068px){
+    .card{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 20px;
+    }
+    .summary-main{
+        display: grid;
+        grid-template-columns: 100%;
+    }
+}
+
+@media only screen and (max-width:768px){
+    .card{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 20px;
+    }
+}
+
+@media only screen and (max-width:568px){
+    .card{
+        display: grid;
+        grid-template-columns: 100%;
+        gap: 20px;
+    }
+}

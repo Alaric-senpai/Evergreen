@@ -33,7 +33,7 @@ export const routes: Routes = [
         component: StudentsComponent,
         children: [
             {
-                path: '',
+                path: 'dashboard',
                 component: DashboardComponent,
                 title: 'dashboard'
             },
@@ -81,6 +81,11 @@ export const routes: Routes = [
                 path: 'messages',
                 component: MessagesComponent,
                 title: 'messages'
+            },
+            {
+                path: '',
+                redirectTo: 'dashboard',
+                pathMatch: 'full'
             }
 
         ]
