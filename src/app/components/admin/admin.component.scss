@@ -1,11 +1,20 @@
-@use '@angular/material' as mat;
+// @use '@angular/material' as mat;
 
-$light-theme: mat.define-theme();
-$dark-theme: mat.define-theme((
-  color: (
-    theme-type: dark
-  )
-));
+// $theme: mat.define-theme((
+//   color: (
+//     theme-type: dark,
+//     primary: mat.$blue-palette,
+//     tertiary: mat.$rose-palette,
+//   )
+// ));
+
+// body {
+//   @include mat.all-component-themes($theme);
+//   font-family: Roboto, "Helvetica Neue", sans-serif;
+//   margin: 0;
+//   padding: 30px;
+//   height: 100%;
+// }
 *{
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -23,9 +32,6 @@ html{
     max-height: 100dvh;
     overflow: hidden;
 
-    @include mat.all-component-colors($dark-theme);
-    
-
 
 }
 
@@ -33,4 +39,103 @@ html{
     width: 95%;
     margin: 0 auto;
     padding-top: 20px;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.mobile .toolbar{
+  position: fixed;
+  z-index: 2;
+}
+
+.toolbar{
+  background-color: #25252b;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  mat-icon{
+    color: white;
+  }
+}
+
+.sidenav-container{
+  flex: 1;
+}
+.mobile .sidenav-container{
+  flex: 1 0 auto;
+}
+mat-sidenav{
+  border-right: none !important;
+  border-radius: 0 !important;border-top: 4px solid rgb(2, 217, 255);
+
+  background-color: #23242c;
+  max-width: 250px;
+  box-sizing: 3px 3px 10px 4px grey;
+  margin: 0 !important;
+}
+mat-sidenav-content{
+  padding: 10px;
+  // margin-left: 20px;/
+}
+mat-nav-list{
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+  // background-color: aqua;
+  height: 100%;
+  div{
+    width: 100% !important;
+  }
+  ul{
+    // background-color: salmon;
+    width: 100%;
+    height: 100%;
+      li{
+         a{
+          height: 50px;
+          width: 100%;
+          // background-color: black;
+          color: white;
+          display: flex;
+          align-items: center;
+          // justify-content: ;
+          padding-inline: 20%;
+          gap: 10px;
+          text-align: center;
+          // float: left;
+          margin-block: 5px;
+          border-radius: 10px;
+          text-decoration: none;
+          transition: all .5s ease;
+
+          span{
+            text-align: start;
+          }
+
+         }
+         a:hover{
+          background-color: darkslategrey;
+          color: white;
+         }
+      }
+  }
+}
+
+.link-active{
+  background-color: white;
+  color: black !important;
+  border-radius: 0 !important;
+  border-top-left-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
 }

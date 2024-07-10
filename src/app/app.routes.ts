@@ -22,6 +22,11 @@ import { LecProfileComponent } from './components/lec-profile/lec-profile.compon
 import { RemindersComponent } from './components/reminders/reminders.component';
 import { LecEventsComponent } from './components/lec-events/lec-events.component';
 import { LecUnitDetailsComponent } from './components/lec-unit-details/lec-unit-details.component';
+import { AdminDashComponent } from './components/admin-dash/admin-dash.component';
+import { AdminNoticeComponent } from './components/admin-notice/admin-notice.component';
+import { AdminEventsComponent } from './components/admin-events/admin-events.component';
+import { AdminMessageComponent } from './components/admin-message/admin-message.component';
+import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
 
 export const routes: Routes = [
     {
@@ -93,7 +98,39 @@ export const routes: Routes = [
     {
         path: 'admin',
         component: AdminComponent,
-        title: 'admin'
+        children: [
+            {
+                path: 'dashboard',
+                component: AdminDashComponent,
+                title: 'Admin dashboard'
+            },
+            {
+                path: 'notices',
+                component: AdminNoticeComponent,
+                title: 'General notices'
+            },
+            {
+                path: 'events',
+                component: AdminEventsComponent,
+                title: 'General events'
+            },
+            {
+                path: 'messages',
+                component: AdminMessageComponent,
+                title: 'Messages'
+            },
+            {
+                path: 'profile',
+                component: AdminProfileComponent,
+                title: 'profile'
+            },
+            {
+                path: '',
+                redirectTo: 'dashboard',
+                pathMatch: 'full'
+            }
+
+        ]
     },
     {
         path: 'teacher',

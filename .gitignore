@@ -42,3 +42,4 @@ testem.log
 Thumbs.db
 
 .env
+/src/app/components/admin/holder.txt

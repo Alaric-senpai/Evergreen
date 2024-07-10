@@ -1,10 +1,35 @@
-<div class="w-90">
-    <mat-card>
-        <mat-card-header>
-            Welcome charles
-        </mat-card-header>
-        <mat-card-content>
-            <button type="button" (click)="goback()" mat-button>Go back</button>
-        </mat-card-content>
-    </mat-card>
+<div [class.mobile]="mobilequery.matches" class="container">
+    <mat-toolbar color="primary" class="toolbar">
+        <button type="button" mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+        <h1>Evergreen</h1>
+    </mat-toolbar>
+
+    <mat-sidenav-container class="sidenav-container" 
+    [style.marginTop.px]="mobilequery.matches? 56: 0">
+        <mat-sidenav #sidenav [mode]="mobilequery.matches ? 'over' : 'side'" 
+        [fixedInViewport]="mobilequery.matches" fixedTopGap="56">
+            <mat-nav-list>
+                <div class="top">
+
+                    <ul>
+                        <li><a href="" routerLink="dashboard" routerLinkActive="link-active"><mat-icon>home</mat-icon> <span>Dashboard</span></a></li>
+                        <li><a href="" routerLink="events" routerLinkActive="link-active"><mat-icon>event</mat-icon> <span>Events</span></a></li>
+                        <li><a href="" routerLink="notices" routerLinkActive="link-active"><mat-icon>note_add</mat-icon> <span>Notice</span></a></li>
+                        <li><a href="" routerLink="messages" routerLinkActive="link-active"><mat-icon>chat</mat-icon> <span>Message</span></a></li>
+                        <li><a href="" routerLink="profile" routerLinkActive="link-active"><mat-icon>settings</mat-icon> <span>Profile</span></a></li>
+                    </ul>
+                </div>
+                <div class="bottom">
+                    <ul>
+                        <li><a href="">
+                            <mat-icon>logout</mat-icon> logout
+                        </a></li>
+                    </ul>
+                </div>
+            </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>            
+        </mat-sidenav-content>
+    </mat-sidenav-container>
 </div>
