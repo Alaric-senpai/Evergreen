@@ -8,6 +8,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatToolbar, MatToolbarRow } from '@angular/material/toolbar';
 import { RouterOutlet, RouterModule } from '@angular/router';
+import { LogoutService } from '../../services/logout.service';
 
 @Component({
   selector: 'app-students',
@@ -19,4 +20,9 @@ import { RouterOutlet, RouterModule } from '@angular/router';
 })
 export class StudentsComponent {
 
+  constructor(private log:LogoutService){}
+
+  logout():void{
+    this.log.logout();
+  }
 }

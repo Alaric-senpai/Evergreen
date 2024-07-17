@@ -1,0 +1,36 @@
+<mat-card>
+    <mat-card-content>
+      <form [formGroup]="loginform" (submit)="loginuser()">
+        <div class="mb-3">
+          <h5 type="button" (click)="goback()" class="header">Evergreen institute</h5>
+        </div>
+        <div class="mb-3">
+          <label for="email">Email </label>
+          <input type="email" name="email" id="email" formControlName="email">
+          <small>
+            <div *ngIf="email.errors && email.dirty">
+              email must be valid
+            </div>
+          </small>
+        </div>
+        <div class="mb-3">
+          <label for="password">Password</label>
+          <input type="text" name="password" id="password" formControlName="password">
+          <small *ngIf="password.dirty">
+              password is required
+          </small>
+        </div>
+        <div class="mb-3">
+          <button type="submit" [disabled]="loginform.invalid" >Login</button>
+        </div>
+      </form>
+
+      <div class="notice" *ngIf="message">
+        {{message}}
+        <button (click)="clearalert()">
+          X
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  

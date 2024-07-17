@@ -24,7 +24,7 @@ export class AdminComponent implements OnDestroy {
   private _mobilequertlistener: () => void;
 
   constructor(private location:GobackService, changedetectorref: ChangeDetectorRef, media:MediaMatcher ){
-    this.mobilequery = media.matchMedia('(max-width:768px)');
+    this.mobilequery = media.matchMedia('(max-width:1268px)');
     this._mobilequertlistener = () =>changedetectorref.detectChanges();
     this.mobilequery.addListener(this._mobilequertlistener);
   }

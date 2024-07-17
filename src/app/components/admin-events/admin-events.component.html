@@ -1,1 +1,57 @@
-<p>admin-events works!</p>
+<div class="events w-95 shadow radius-20">
+    <div class="header">
+        <div class="label">
+            Events Management
+        </div>
+        <div class="icon">
+            <button type="button"  mat-mini-fab>
+                <mat-icon>add</mat-icon>
+            </button>
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="event event-header" id="top">
+        <div>
+            thumbnail
+        </div>
+        <div>
+            Event Information
+        </div>
+        <div>
+            Venue Information
+        </div>
+        <div class="Actions">
+            act
+        </div>
+    </div>
+    <div class="ev">
+        <div class="event-header">
+            EVENT
+        </div>
+        <div class="event">
+            <div class="thumbnail">
+                <img src="https://images.unsplash.com/photo-1715553175979-617c6018cbe0?dpr=1&h=302&w=302&auto=format&fit=crop&q=60&ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzIwNjY2ODU2fA&ixlib=rb-4.0.3" alt="" mat-card-avatar>
+            </div>
+            <div class="info">
+                <p class="title">Some events name</p>
+                <p class="subtitle">Slogan for event</p>
+            </div>
+            <div class="date">
+                <p>12/2/2024</p>
+                <p>Venue: RC 18 </p>
+            </div>
+            <div class="book">
+                <button type="button" mat-icon-button [matMenuTriggerFor]="action">
+                    <mat-icon>chevron_right</mat-icon>
+                </button>
+            </div>
+    
+            <mat-menu #action>
+               <button type="button"  mat-menu-item>Apply</button>
+               <button type="button"  mat-menu-item>Seen</button>
+            </mat-menu>
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+</div>
+

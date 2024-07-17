@@ -23,7 +23,7 @@
       </button>
       <mat-menu #menu="matMenu">
         <a mat-menu-item routerLink="profile">View profile</a>
-        <a mat-menu-item>Log Out</a>
+        <button mat-menu-item (click)="logout()">Log Out</button>
       </mat-menu>
       <a mat-icon-button  routerLink="messages" class="white">
         <mat-icon>notifications</mat-icon>
