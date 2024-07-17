@@ -18,14 +18,14 @@
           <div class="details">
             <div class="info">
               <mat-card-title-group>
-                <mat-card-title>alaric Senpai</mat-card-title>
+                <mat-card-title> {{userinfo.firstname}} {{userinfo.lastname}} </mat-card-title>
                 <mat-card-subtitle>senpai.gmail.com</mat-card-subtitle>
               </mat-card-title-group>
             </div>
             <div class="act">
-              <a mat-icon-button>
+              <button mat-icon-button (click)="logout()">
                 <mat-icon>logout</mat-icon>
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -34,7 +34,7 @@
     <div class="content">
       <mat-card class="greet">
         <mat-card-content>
-          <h6>Good morning User</h6>
+          <h6>Good morning, {{userinfo.firstname}} </h6>
           <span id="time">{{ today | date: 'shortDate' }}</span>
           <button id="menu" (click)="showmenu()" mat-mini-fab>
             <mat-icon>menu</mat-icon>

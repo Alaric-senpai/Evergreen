@@ -15,6 +15,6 @@ export class UsermanagementService {
   }
 
   userinfo(email:any): Observable<any>{
-    return this.http.get(`${this.apiurl}/user`, email)
+    return this.http.post(`${this.apiurl}/user`, {email})
   }
 }

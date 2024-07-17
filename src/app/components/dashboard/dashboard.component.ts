@@ -8,6 +8,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { MatMenuModule } from '@angular/material/menu';
 import { ResultsComponent } from '../results/results.component';
 import { UsermanagementService } from '../../services/usermanagement.service';
+import { catchError } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,18 +19,27 @@ import { UsermanagementService } from '../../services/usermanagement.service';
 })
 export class DashboardComponent implements OnInit {
   email = sessionStorage.getItem('email');
-  userinfo: any[] = [];
+  userinfo: any = {};
   constructor(private user: UsermanagementService){}
 
   ngOnInit(): void {
-      
+      this.getuserinfo();
   }
 
-  getuserinfo(){
+  getuserinfo() {
     this.user.userinfo(this.email).subscribe(
-      response =>{
-        this.userinfo = response.user
+      (response: any) => {
+        try {
+          console.log(this.email);
+          this.userinfo = response.user;
+          console.log(response);
+        } catch (error) {
+          console.error("error detected", error);
+        }
+      },
+      (error: any) => {
+        console.error(error);
       }
-    )
+    );
   }
 }

@@ -17,14 +17,17 @@ import { GobackService } from '../../services/goback.service';
 })
 export class LoginComponent {
   loginform!: FormGroup;
+  message: string | null = null;
 
-   message: string| null = null;
-
-  constructor(private formbuilder: FormBuilder, private router: Router, private usermg: UsermanagementService, private back:GobackService) {
+  constructor(
+    private formbuilder: FormBuilder,
+    private router: Router,
+    private usermg: UsermanagementService,
+    private back: GobackService
+  ) {
     this.validateform();
   }
 
-  
   validateform(): void {
     this.loginform = this.formbuilder.group({
       email: ["", [Validators.required, Validators.email]],
@@ -32,36 +35,44 @@ export class LoginComponent {
     });
   }
 
-  get email(){
-    return this.loginform.controls['email']
+  get email() {
+    return this.loginform.controls['email'];
   }
-  get password(){
-    return this.loginform.controls['password']
+
+  get password() {
+    return this.loginform.controls['password'];
   }
+
   loginuser() {
     this.usermg.login(this.loginform.controls['email'].value, this.loginform.controls['password'].value).subscribe(
       response => {
         sessionStorage.setItem('email', response.user.email);
+
+        // Log the user type to debug
+        console.log('User type:', response.user.usertype);
+
         if (response.user.usertype === 'student') {
           this.router.navigate(['/student']);
         } else if (response.user.usertype === 'lecturer') {
           this.router.navigate(['/teacher/dashboard']);
         } else if (response.user.usertype === 'admin') {
           this.router.navigate(['/admin']);
+        } else {
+          this.message = "Unknown user type.";
         }
       },
       error => {
-        this.message = "Login attempt failed. Check your credentials."
+        this.message = error.error.message;
         console.error(error);
       }
     );
   }
 
-  clearalert(){
+  clearalert() {
     this.message = null;
   }
 
-  goback(){
-    this.back.goback()
+  goback() {
+    this.back.goback();
   }
 }

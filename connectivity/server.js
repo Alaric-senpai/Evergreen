@@ -53,8 +53,8 @@ app.post('/login', async (req, res) => {
 });
 
 
-app.get('/user' , async (req , res)=>{
-  const email = reg.body;
+app.post('/user' , async (req , res)=>{
+  const { email } = req.body;
 
   let conn;
 
@@ -71,11 +71,10 @@ app.get('/user' , async (req , res)=>{
       res.json({message: 'user data fetched correctly', user :{email: user.email, firstname: user.firstname, lastname: user.lastname, position: user.position}})
 
     }else{
-      res.status(404).json({ message: 'User not found' });
+      res.status(404).json({ message: 'User missing' });
 
     }
-  } catch (error) {
-    
+  } catch (err) {
     console.error(err);
     res.status(500).json({ message: 'Server error' });
   } finally {
